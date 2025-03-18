@@ -44,6 +44,7 @@ base_model.trainable = False  # Freeze base model
 # Define the new model
 model = Sequential([
     base_model,
+    Conv2D(32, (3, 3), padding='same', activation='relu', input_shape=(224, 224, 3)),
     Flatten(),
     Dropout(0.5),
     Dense(128, activation='relu'),
